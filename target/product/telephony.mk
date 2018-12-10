@@ -30,7 +30,6 @@ endif
 
 PRODUCT_PACKAGES += \
     TeleService \
-    Dialer \
     Rild
 
 PRODUCT_COPY_FILES := \

@@ -126,28 +126,18 @@ PRODUCT_PACKAGES := \
     DeskClock \
     AlarmProvider \
     Bluetooth \
-    Calculator \
-    Calendar \
     CertInstaller \
     DrmProvider \
-    Email \
     FusedLocation \
     TelephonyProvider \
     Exchange2 \
     LatinIME \
-    Music \
-    MusicFX \
-    SoundRecorder \
-    Protips \
     ApplicationsProvider \
     OneTimeInitializer \
-    PrintSpooler \
     QuickSearchBox \
     Settings \
-    FactoryMode \
     Sync \
     SystemUI \
-    Keyguard \
     Updater \
     CalendarProvider \
     ccci_mdinit \
@@ -885,9 +875,9 @@ ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   $(call inherit-product-if-exists, mediatek/external/mtknfc/mtknfc.mk)
 endif
 
-ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
-  PRODUCT_PACKAGES += MTKLogger
-endif
+# ifeq ($(strip $(MTK_MTKLOGGER_SUPPORT)), yes)
+#   PRODUCT_PACKAGES += MTKLogger
+# endif
 
 ifeq ($(strip $(MTK_SPECIFIC_SM_CAUSE)), yes)
   PRODUCT_PROPERTY_OVERRIDES += \
@@ -900,7 +890,7 @@ endif
 ifeq ($(strip $(MTK_EMULATOR_SUPPORT)),yes)
   PRODUCT_PACKAGES += SDKGallery
 else
-  PRODUCT_PACKAGES += Gallery2
+  # PRODUCT_PACKAGES += Gallery2
 endif
 
 
@@ -937,11 +927,11 @@ ifeq ($(strip $(MTK_OOBE_APP)),yes)
   PRODUCT_PACKAGES += OOBE
 endif
 
-ifdef MTK_WEATHER_PROVIDER_APP
-  ifneq ($(strip $(MTK_WEATHER_PROVIDER_APP)), no)
-    PRODUCT_PACKAGES += MtkWeatherProvider
-  endif
-endif
+# ifdef MTK_WEATHER_PROVIDER_APP
+#   ifneq ($(strip $(MTK_WEATHER_PROVIDER_APP)), no)
+#     PRODUCT_PACKAGES += MtkWeatherProvider
+#   endif
+# endif
 
 ifeq ($(strip $(MTK_VOICE_UNLOCK_SUPPORT)),yes)
     PRODUCT_PACKAGES += VoiceCommand
@@ -1007,24 +997,24 @@ else
   PRODUCT_PACKAGES += Stk1
 endif
 
-ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
-  PRODUCT_PACKAGES += EngineerMode \
-                      EngineerModeSim \
-                      libem_bt_jni \
-                      libem_support_jni \
-                      libem_gpio_jni \
-                      libem_lte_jni \
-                      libem_modem_jni \
-                      libem_sensor_jni \
-                      libem_usb_jni \
-                      libem_wifi_jni
-  ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
-      PRODUCT_PACKAGES += libem_nfc_jni
-  endif
-  ifneq ($(strip $(MTK_LCA_RAM_OPTIMIZE)), yes)
-      PRODUCT_PACKAGES += em_svr
-  endif
-endif
+# ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
+#   PRODUCT_PACKAGES += EngineerMode \
+#                       EngineerModeSim \
+#                       libem_bt_jni \
+#                       libem_support_jni \
+#                       libem_gpio_jni \
+#                       libem_lte_jni \
+#                       libem_modem_jni \
+#                       libem_sensor_jni \
+#                       libem_usb_jni \
+#                       libem_wifi_jni
+#   ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
+#       PRODUCT_PACKAGES += libem_nfc_jni
+#   endif
+#   ifneq ($(strip $(MTK_LCA_RAM_OPTIMIZE)), yes)
+#       PRODUCT_PACKAGES += em_svr
+#   endif
+# endif
 
 ifeq ($(strip $(MTK_RCSE_SUPPORT)), yes)
     PRODUCT_PACKAGES += Rcse
@@ -1076,16 +1066,16 @@ else
   endif
 endif
 
-ifeq ($(strip $(MTK_LIVEWALLPAPER_APP)), yes)
-  PRODUCT_PACKAGES += LiveWallpapers \
-                      LiveWallpapersPicker \
-                      MagicSmokeWallpapers \
-                      VisualizationWallpapers \
-                      Galaxy4 \
-                      HoloSpiralWallpaper \
-                      NoiseField \
-                      PhaseBeam
-endif
+# ifeq ($(strip $(MTK_LIVEWALLPAPER_APP)), yes)
+#   PRODUCT_PACKAGES += LiveWallpapers \
+#                       LiveWallpapersPicker \
+#                       MagicSmokeWallpapers \
+#                       VisualizationWallpapers \
+#                       Galaxy4 \
+#                       HoloSpiralWallpaper \
+#                       NoiseField \
+#                       PhaseBeam
+# endif
 
 ifeq ($(strip $(MTK_VLW_APP)), yes)
   PRODUCT_PACKAGES += MtkVideoLiveWallpaper
@@ -1188,10 +1178,10 @@ endif
 #endif
 
 
-ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
-  PRODUCT_PACKAGES += EngineerMode \
-                      MobileLog
-endif
+# ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
+#   PRODUCT_PACKAGES += EngineerMode \
+#                       MobileLog
+# endif
 
 ifeq ($(strip $(HAVE_MATV_FEATURE)),yes)
   PRODUCT_PACKAGES += MtvPlayer \
@@ -1251,8 +1241,8 @@ ifneq ($(strip $(MTK_LOCKSCREEN_TYPE)),)
 endif
 
 ifeq ($(strip $(MTK_OMA_DOWNLOAD_SUPPORT)),yes)
-  PRODUCT_PACKAGES += Browser \
-                      DownloadProvider
+  PRODUCT_PACKAGES += Browser
+                      # DownloadProvider
 endif
 
 ifeq ($(strip $(MTK_OMACP_SUPPORT)),yes)
@@ -1305,9 +1295,9 @@ ifeq ($(strip $(MTK_FILEMANAGER_APP)), yes)
   PRODUCT_PACKAGES += FileManager
 endif
 
-ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
-  PRODUCT_PACKAGES += ActivityNetwork
-endif
+# ifeq ($(strip $(MTK_ENGINEERMODE_APP)), yes)
+#   PRODUCT_PACKAGES += ActivityNetwork
+# endif
 
 ifneq ($(findstring OP03, $(strip $(OPTR_SPEC_SEG_DEF))),)
   PRODUCT_PACKAGES += SimCardAuthenticationService
@@ -1594,9 +1584,9 @@ ifeq ($(strip $(HAVE_SRSAUDIOEFFECT_FEATURE)),yes)
   PRODUCT_PACKAGES += libsrsprocessing
 endif
 
-ifeq ($(strip $(MTK_WEATHER_WIDGET_APP)), yes)
-    PRODUCT_PACKAGES += MtkWeatherWidget
-endif
+# ifeq ($(strip $(MTK_WEATHER_WIDGET_APP)), yes)
+#     PRODUCT_PACKAGES += MtkWeatherWidget
+# endif
 
 ifeq ($(strip $(MTK_REGIONALPHONE_SUPPORT)), yes)
   PRODUCT_PACKAGES += RegionalPhoneManager

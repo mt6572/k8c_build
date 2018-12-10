@@ -26,16 +26,14 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 PRODUCT_PACKAGES += \
     Browser \
-    Contacts \
     DocumentsUI \
-    DownloadProviderUi \
     ExternalStorageProvider \
     KeyChain \
     PicoTts \
     PacProcessor \
     ProxyHandler \
-    SharedStorageBackup \
-    VpnDialogs
+    SharedStorageBackup 
+        # VpnDialogs
 
 ifneq ($(strip $(MTK_LCA_RAM_OPTIMIZE)), yes)
   PRODUCT_PACKAGES += BasicDreams

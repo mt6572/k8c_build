@@ -1,19 +1,7 @@
 
-PRODUCT_PACKAGES := K8Call \
-                    Apppoweroff \
-                    AgoraVideo \
-                    Alarm \
-                    Chat \
-                    DokiContacts \
-                    DataService \
-                    K8Launcher \
-                    Makefriends \
-                    Pedometer \
-                    Push \
-                    K8Gallery \
-                    K8Camera \
-                    SOS
-          
+PRODUCT_PACKAGES := Apppoweroff
+					# Geofence \
+					# TestService          
 
 
 

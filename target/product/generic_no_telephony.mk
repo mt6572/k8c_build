@@ -22,14 +22,10 @@ PRODUCT_POLICY := android.policy_phone
 PRODUCT_PACKAGES := \
     DeskClock \
     Bluetooth \
-    Calculator \
     Calendar \
-    Camera2 \
     CertInstaller \
-    Email \
     Exchange2 \
     FusedLocation \
-    Gallery2 \
     InputDevices \
     Keyguard \
     LatinIME \
@@ -48,6 +44,10 @@ PRODUCT_PACKAGES := \
     hostapd \
     wpa_supplicant.conf \
     WallpaperCropper
+    # Calculator \
+    # Gallery2 \
+    # Email \
+    # Camera2 \
 
 PRODUCT_PACKAGES += \
     audio \
